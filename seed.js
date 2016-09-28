@@ -8,7 +8,7 @@ var SanFrancisco = {
     name: "San Francisco",
     logo: "https://parkerhiggins.net/wp-content/uploads/2012/07/ggb.png", //url to image
 
-    posts: [{
+    blurbs: [{
         poster: "Brandon",
         textContent: "Hey I made a post",
         likes: 100,
@@ -20,7 +20,7 @@ var SanFrancisco = {
         imgPath: ""
     }, {
         poster: "Ilias",
-        textContent: "Theo drop it!",
+        textContent: "Theo, drop it!",
         likes: 1,
         imgPath: ""
     }]

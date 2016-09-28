@@ -1,13 +1,13 @@
 var mongoose = require("mongoose");
 var Schema = mongoose.Schema;
 
-var PostSchema = new Schema({
+var BlurbSchema = new Schema({
   poster: String,
   textContent: String,
   likes: Number,
   imgPath: String
 });
 
-var Post = mongoose.model('Post', PostSchema);
+var Blurb = mongoose.model('Blurb', BlurbSchema);
 
-module.exports = Post;
+module.exports = Blurb;

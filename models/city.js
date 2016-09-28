@@ -1,7 +1,7 @@
 var mongoose = require('mongoose'),
     Schema = mongoose.Schema;
 
-var Post = require('./post');
+var Post = require('./blurb');
 
 var CitySchema = new Schema({
     location: {
@@ -10,7 +10,7 @@ var CitySchema = new Schema({
     },
     name: String,
     logo: String, //url to image
-    posts: [Post.schema]
+    blurbs: [Blurb.schema]
 });
 
 var City = mongoose.model('City', CitySchema);

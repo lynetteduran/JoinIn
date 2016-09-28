@@ -7,21 +7,3 @@
     <button type="button" name="deleteBtn"></button>
     <button type="button" name="likeBtn"></button>
 </script>
-
-
-<script id="city-template" type="text/x-handlebars-template">
-    <img src="#" alt="City Logo">
-    <h1>cityName</h1>
-
-    {{#each blurbs}}
-      <h4>{{blurbs.name}}</h4>
-      <p>{{blurbs.blurbText}}</p>
-      <h5>{{blurbs.likes}}</h5>
-      <!-- {{tags}} tags associated with that post -->
-      <!-- {{photo}} popup photo for that post -->
-      <button type="button" name="deleteBtn"></button>
-      <button type="button" name="likeBtn"></button>
-    {{/each}}
-
-    <!-- {{tags[0-3]}} top tags in that city -->
-</script>
