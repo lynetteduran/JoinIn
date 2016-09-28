@@ -1,37 +1,42 @@
 <!DOCTYPE html>
 <html>
-  <head>
+
+<head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <title></title>
 
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css" integrity="sha384-y3tfxAZXuh4HwSYylfB+J125MxIs6mR5FOHamPBG064zB+AFeWH94NdvaCBm8qnd" crossorigin="anonymous">
-  </head>
-  <body>
-    <h1>Hello, world!</h1>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.min.js"></script>
 
+    <script src="scripts/app.js"></script>
+</head>
 
-    <script id="city-template" type="text/x-handlebars-template">
-        <img src="#" alt="City Logo">
-        <h1>cityName</h1>
+<body>
+    <div id="city-container">
+        <script id="city-template" type="text/x-handlebars-template">
+            {{#each city}}
+              <img src="{{logo}}" alt="City Logo">
+              <h1>{{name}}</h1>
 
-        {{#each blurbs}}
-          <h4>{{blurbs.name}}</h4>
-          <p>{{blurbs.blurbText}}</p>
-          <h5>{{blurbs.likes}}</h5>
-          <!-- {{tags}} tags associated with that post -->
-          <!-- {{photo}} popup photo for that post -->
-          <button type="button" name="deleteBtn"></button>
-          <button type="button" name="likeBtn"></button>
-        {{/each}}
+              {{#each blurbs}}
+                <h4>{{poster}}</h4>
+                <p>{{textContent}}</p>
+                <h5>{{likes}}</h5>
+                <!-- {{tags}} tags associated with that post -->
+                <!-- {{photo}} popup photo for that post -->
+                <button type="button" name="deleteBtn">X</button>
+                <button type="button" name="likeBtn">+1</button>
+              {{/each}}
 
-        <!-- {{tags[0-3]}} top tags in that city -->
-    </script>
-
+            {{/each}}
+        </script>
+    </div>
 
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/js/bootstrap.min.js" integrity="sha384-vZ2WRJMwsjRMW/8U7i6PWi6AlO1L79snBrmgiDpgIWJ82z8eA5lenwvxbMV1PAh7" crossorigin="anonymous"></script>
-  </body>
+</body>
+
 </html>

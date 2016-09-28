@@ -1,7 +1,7 @@
 var mongoose = require('mongoose'),
     Schema = mongoose.Schema;
 
-var Post = require('./blurb');
+var Blurb = require('./blurb');
 
 var CitySchema = new Schema({
     location: {

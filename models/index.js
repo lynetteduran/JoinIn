@@ -1,7 +1,7 @@
 var mongoose = require("mongoose");
 mongoose.connect("mongodb://localhost/JoinIn");
 var City = require('./city');
-var Post = require('./post');
+var Blurb = require('./blurb');
 
 module.exports.City = City;
-module.exports.Post = Post;
+module.exports.Blurb = Blurb;

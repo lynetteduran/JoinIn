@@ -32,8 +32,14 @@ app.get('/', function homepage (req, res) {
  * JSON API Endpoints
  */
 
-app.get('/cities', function api_index (req, res){
-
+app.get('/api/cities', function api_index (req, res){
+  // send all cities as JSON response
+      db.City.find(function(err, city) {
+          if (err) {
+              return console.log("index error " + err);
+          }
+          res.json(city);
+      });
 });
 
 app.post('/cities', function songsCreate(req, res) {
@@ -48,16 +54,16 @@ app.delete('/cities/:id', function albumCreate(req, res) {
 
 });
 
-app.get('/cities/:id/posts', function albumShow(req, res) {
+app.get('/cities/:id/blurbs', function albumShow(req, res) {
 });
 
-app.post('/cities/:id/posts', function albumShow(req, res) {
+app.post('/cities/:id/blurbs', function albumShow(req, res) {
 });
 
-app.delete('/cities/:id/posts/:postId', function deleteAlbum(req, res) {
+app.delete('/cities/:id/blurbs/:blurbId', function deleteAlbum(req, res) {
 });
 
-app.put('/cities/:id/posts/:postId', function updateAlbum(req, res) {
+app.put('/cities/:id/blurbs/:blurbId', function updateAlbum(req, res) {
 });
 
 /**********
