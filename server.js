@@ -32,7 +32,7 @@ app.get('/', function homepage (req, res) {
  * JSON API Endpoints
  */
 
-app.get('/api/cities', function api_index (req, res){
+app.get('/cities', function api_index (req, res){
   // send all cities as JSON response
       db.City.find(function(err, city) {
           if (err) {
