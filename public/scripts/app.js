@@ -12,7 +12,7 @@ $(document).ready(function(){
 
   $.ajax({
     method: 'GET',
-    url: '/cities',
+    url: '/api/cities',
     success: handleSuccess,
     error: handleError
   });
@@ -35,6 +35,7 @@ function render () {
 
 function handleSuccess(json) {
   allCities = json;
+  console.log(json);
   render();
 }
 
