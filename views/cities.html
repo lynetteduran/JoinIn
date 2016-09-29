@@ -10,24 +10,24 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.min.js"></script>
 
-    <script src="scripts/app.js"></script>
+    <script src="/scripts/city-page.js"></script>
 </head>
 
 <body>
     <div id="city-container">
         <script id="city-template" type="text/x-handlebars-template">
-
-              <img src="{{logo}}" alt="{{name}} Logo">
-              <h1><a href = "www.google.com">{{name}}  </a></h1>
-
-
-            {{#each blurbs}}
-            <h4>{{poster}}</h4>
-            <p>{{textContent}}</p>
-            <h5>{{likes}}</h5>
-            <button type="button" class = "deleteBlurbBtn" name="deleteBtn">X</button>
-                <button type="button" class = "likeBlurbBtn" name="likeBtn">+1</button>
-
+            <a href="#">
+                <img src="{{city.logo}}" alt="City Logo">
+                <h1 class="city-name" data={{city._id}}>{{city.name}}</h1>
+            </a>
+            {{#each city.blurbs}}
+            <div class="blurb-box">
+                <h4>{{poster}}</h4>
+                <p>{{textContent}}</p>
+                <h5>{{likes}}</h5>
+                <button type="button" data = {{_id}} class="deleteBlurbBtn" name="deleteBtn">X</button>
+                <button type="button" data = {{_id}} class="likeBlurbBtn" name="likeBtn">+1</button>
+            </div>
             {{/each}}
         </script>
     </div>

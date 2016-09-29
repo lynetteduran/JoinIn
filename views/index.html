@@ -10,14 +10,14 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.min.js"></script>
 
-    <script src="scripts/app.js"></script>
+    <script src="/scripts/app.js"></script>
 </head>
 
 <body>
     <div id="city-container">
         <script id="city-template" type="text/x-handlebars-template">
             {{#each city}}
-            <a href="#">
+            <a href="/cities/{{_id}}">
                 <img src="{{logo}}" alt="City Logo">
                 <h1 class = "city-name" data = {{_id}}>{{name}}</h1>
             </a>
@@ -26,8 +26,6 @@
                 <h4>{{blurbs.0.poster}}</h4>
                 <p>{{blurbs.0.textContent}}</p>
                 <h5>{{blurbs.0.likes}}</h5>
-                <button type="button" class = "deleteBlurbBtn" name="deleteBtn">X</button>
-                <button type="button" class = "likeBlurbBtn" name="likeBtn">+1</button>
             </div>
             {{/each}}
         </script>

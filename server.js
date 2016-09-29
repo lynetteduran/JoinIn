@@ -2,6 +2,7 @@
 
 //require express in our app
 var express = require('express');
+var morgan = require('morgan');
 
 // generate a new express app and call it 'app'
 var app = express();
@@ -14,6 +15,7 @@ app.use(express.static(__dirname + '/public'));
 app.use(bodyParser.urlencoded({
     extended: true
 }));
+app.use(morgan('combined'));
 
 /************
  * DATABASE *
@@ -33,6 +35,7 @@ app.get('/', function homepage(req, res) {
 });
 
 app.get('/cities/:id', function homepage(req, res) {
+  console.log(req.params.id)
     res.sendFile(__dirname + '/views/cities.html');
 });
 
