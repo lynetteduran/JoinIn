@@ -35,6 +35,7 @@ function render () {
 
 function handleSuccess(json) {
   allCities = json;
+  console.log(json);
   render();
 }
 
