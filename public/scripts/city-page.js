@@ -28,7 +28,26 @@ $(document).ready(function() {
         })
     })
 
+    $("#city-container").on("click", ".likeBlurbBtn", function() {
+      likes = $(this).siblings(".likes").html();
+      $(this).siblings(".likes").html(+likes+1);
+
+        // $.ajax({
+        //     method: "PUT",
+        //     url: "/api/cities/" + cityId + "/blurbs/" + $(this).attr('data'),
+        //     success: likeBlurbSucess,
+        //     error: likeBlurbError
+        // })
+    });
+
 });
+
+
+function likeBlurbSuccess(likes){
+
+  console.log(likes);
+}
+
 
 function deleteBlurbError(){
   console.log('delete blurb error');

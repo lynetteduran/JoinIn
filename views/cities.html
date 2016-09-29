@@ -22,11 +22,11 @@
             </a>
             {{#each city.blurbs}}
             <div class="blurb-box">
-                <h4>{{poster}}</h4>
-                <p>{{textContent}}</p>
-                <h5>{{likes}}</h5>
-                <button type="button" data = {{_id}} class="deleteBlurbBtn" name="deleteBtn">X</button>
-                <button type="button" data = {{_id}} class="likeBlurbBtn" name="likeBtn">+1</button>
+                <h4 class="posterName">{{poster}}</h4>
+                <p class="blurbText">{{textContent}}</p>
+                <h5 class="likes">{{likes}}</h5>
+                <button type="button" data={ {_id}} class="deleteBlurbBtn" name="deleteBtn">X</button>
+                <button type="button" data={ {_id}} class="likeBlurbBtn" name="likeBtn">+1</button>
             </div>
             {{/each}}
         </script>

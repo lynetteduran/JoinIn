@@ -1,5 +1,8 @@
 var db = require("./models");
 
+//use JoinIn
+//JoinIn.dropDatabase();
+
 var SanFrancisco = {
     location: {
         lat: 1,
