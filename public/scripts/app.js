@@ -12,7 +12,7 @@ $(document).ready(function(){
 
   $.ajax({
     method: 'GET',
-    url: '/cities',
+    url: '/api/cities',
     success: handleSuccess,
     error: handleError
   });

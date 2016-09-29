@@ -16,19 +16,18 @@
 <body>
     <div id="city-container">
         <script id="city-template" type="text/x-handlebars-template">
-            {{#each city}}
-            <a href="#">
-                <img src="{{logo}}" alt="City Logo">
-                <h1 class = "city-name" data = {{_id}}>{{name}}</h1>
-            </a>
 
-            <div class="blurb-box">
-                <h4>{{blurbs.0.poster}}</h4>
-                <p>{{blurbs.0.textContent}}</p>
-                <h5>{{blurbs.0.likes}}</h5>
-                <button type="button" class = "deleteBlurbBtn" name="deleteBtn">X</button>
+              <img src="{{logo}}" alt="{{name}} Logo">
+              <h1><a href = "www.google.com">{{name}}  </a></h1>
+
+
+            {{#each blurbs}}
+            <h4>{{poster}}</h4>
+            <p>{{textContent}}</p>
+            <h5>{{likes}}</h5>
+            <button type="button" class = "deleteBlurbBtn" name="deleteBtn">X</button>
                 <button type="button" class = "likeBlurbBtn" name="likeBtn">+1</button>
-            </div>
+
             {{/each}}
         </script>
     </div>
