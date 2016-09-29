@@ -24,7 +24,11 @@ var db = require('./models');
 /*
  * HTML Endpoints
  */
-app.get('/', function homepage (req, res) {
+app.get('/', function homepage(req, res) {
+  res.sendFile(__dirname + '/views/index.html');
+});
+
+app.get('/cities', function homepage(req, res) {
   res.sendFile(__dirname + '/views/index.html');
 });
 
@@ -32,39 +36,45 @@ app.get('/', function homepage (req, res) {
  * JSON API Endpoints
  */
 
-app.get('/cities', function api_index (req, res){
+app.get('/api/cities', function citiesIndex(req, res){
   // send all cities as JSON response
-      db.City.find(function(err, city) {
-          if (err) {
-              return console.log("index error " + err);
-          }
-          res.json(city);
-      });
+  db.City.find(function(err, city) {
+    if (err) {
+      return console.log("index error " + err);
+    }
+    res.json(city);
+  });
 });
 
-app.post('/cities', function songsCreate(req, res) {
-
+app.post('/api/cities', function citiesIndex(req, res) {
+  //create a new City
 });
 
-app.get('/cities/:id', function albumsIndex(req, res) {
-
+app.get('/api/cities/:id', function citiesIndex(req, res) {
+  //get all cities
 });
 
-app.delete('/cities/:id', function albumCreate(req, res) {
-
+app.delete('/api/cities/:id', function cityDelete(req, res) {
+  //delete a city
 });
 
-app.get('/cities/:id/blurbs', function albumShow(req, res) {
+app.get('/api/cities/:id/blurbs', function blurbShow(req, res) {
+  //get all blurbs for a city
 });
 
-app.post('/cities/:id/blurbs', function albumShow(req, res) {
+app.post('/api/cities/:id/blurbs', function blurbCreate(req, res) {
+  //add a blurb for a city
 });
 
-app.delete('/cities/:id/blurbs/:blurbId', function deleteAlbum(req, res) {
+app.put('/api/cities/:id/blurbs/:blurbId', function blurbUpdate(req, res) {
+  //update a blurb
 });
 
-app.put('/cities/:id/blurbs/:blurbId', function updateAlbum(req, res) {
+app.delete('/api/cities/:id/blurbs/:blurbId', function blurbDelete(req, res) {
+  //delete a blurb
 });
+
+
 
 /**********
  * SERVER *
