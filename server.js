@@ -110,11 +110,13 @@ app.delete('/api/cities/:id/blurbs/:blurbId', function deleteBlurb(req, res) {
     var blurbId = req.params.blurbId;
     var cityId = req.params.id;
 
-    db.City.findOne({_id: cityId}, function(err, city) {
-      city.blurbs = city.blurbs.filter(function(blurb) {
-        return blurb._id != blurbId;
-      })
-      city.save();
+    db.City.findOne({
+        _id: cityId
+    }, function(err, city) {
+        city.blurbs = city.blurbs.filter(function(blurb) {
+            return blurb._id != blurbId;
+        })
+        city.save();
     });
     res.send(blurbId);
 
@@ -123,17 +125,22 @@ app.delete('/api/cities/:id/blurbs/:blurbId', function deleteBlurb(req, res) {
 
 
 app.put('/api/cities/:id/blurbs/:blurbId', function updateBlurb(req, res) {
-    db.Blurb.findOneAndUpdate({
-        _id: req.params.blurbId
-    }, {
-        textContent: req.body.textContent,
-        likes: this.likes++
-    }, function(err, changedBlurb) {
-        if (err) {
-            console.log("error changing blurb")
-        }
-        res.json(changedBlurb);
-    })
+    var blurbId = req.params.blurbId;
+    var cityId = req.params.id;
+
+    db.City.findOne({
+            _id: cityId
+        },
+        function(err, city) {
+          city.blurbs.forEach(function(blurb) {
+                if (blurb._id == blurbId) {
+                    blurb.likes += 1;
+                }
+            });
+            city.save();
+        });
+
+    res.send(blurbId);
 });
 
 

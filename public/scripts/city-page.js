@@ -32,20 +32,23 @@ $(document).ready(function() {
       likes = $(this).siblings(".likes").html();
       $(this).siblings(".likes").html(+likes+1);
 
-        // $.ajax({
-        //     method: "PUT",
-        //     url: "/api/cities/" + cityId + "/blurbs/" + $(this).attr('data'),
-        //     success: likeBlurbSucess,
-        //     error: likeBlurbError
-        // })
+        $.ajax({
+            method: "PUT",
+            url: "/api/cities/" + cityId + "/blurbs/" + $(this).attr('data'),
+            success: likeBlurbSuccess,
+            error: likeBlurbError
+        })
+        $("#city-container").off("click", ".likeBlurbBtn");
     });
 
 });
 
+function likeBlurbError(){
+  console.log("like blurb error");
+}
 
-function likeBlurbSuccess(likes){
-
-  console.log(likes);
+function likeBlurbSuccess(id){
+  console.log(id);
 }
 
 
