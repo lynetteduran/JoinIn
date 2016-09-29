@@ -35,7 +35,7 @@ app.get('/', function homepage(req, res) {
 });
 
 app.get('/cities/:id', function homepage(req, res) {
-  console.log(req.params.id)
+    console.log(req.params.id)
     res.sendFile(__dirname + '/views/cities.html');
 });
 
@@ -106,26 +106,28 @@ app.post('/api/cities/:id/blurbs', function blurbsCreate(req, res) {
     res.json(newBlurb);
 });
 
-app.delete('/api/cities/:id/blurbs/:blurbId', function deleteAlbum(req, res) {
+app.delete('/api/cities/:id/blurbs/:blurbId', function deleteBlurb(req, res) {
     var blurbId = req.params.blurbId;
-    db.Blurb.remove({
-        _id: blurbId
-    }, function(err, removedBlurb) {
-        if (err) {
-            res.send("remove blurb error")
-        };
-        res.json({
-            _id: blurbId
-        });
+    var cityId = req.params.id;
+
+    db.City.findOne({_id: cityId}, function(err, city) {
+      city.blurbs = city.blurbs.filter(function(blurb) {
+        return blurb._id != blurbId;
+      })
+      city.save();
     });
+    res.send(blurbId);
+
 });
 
-app.put('/api/cities/:id/blurbs/:blurbId', function updateAlbum(req, res) {
+
+
+app.put('/api/cities/:id/blurbs/:blurbId', function updateBlurb(req, res) {
     db.Blurb.findOneAndUpdate({
         _id: req.params.blurbId
     }, {
         textContent: req.body.textContent,
-        imgPath: req.body.imgPath
+        likes: this.likes++
     }, function(err, changedBlurb) {
         if (err) {
             console.log("error changing blurb")
