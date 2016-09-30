@@ -96,13 +96,19 @@ app.get('/api/cities/:id/blurbs', function blurbsShow(req, res) {
 });
 
 app.post('/api/cities/:id/blurbs', function blurbsCreate(req, res) {
+    var cityId = req.params.id;
     var newBlurb = new db.Blurb({
         poster: req.body.poster,
         textContent: req.body.textContent,
         likes: 0,
-        imgPath: req.body.imgPath
+        imgPath: req.body.imgPath || ""
     });
-    newBlurb.save();
+    db.City.findOne({
+        _id: cityId
+    }, function(err, city) {
+        city.blurbs.unshift(newBlurb);
+        city.save();
+    })
     res.json(newBlurb);
 });
 
@@ -132,7 +138,7 @@ app.put('/api/cities/:id/blurbs/:blurbId', function updateBlurb(req, res) {
             _id: cityId
         },
         function(err, city) {
-          city.blurbs.forEach(function(blurb) {
+            city.blurbs.forEach(function(blurb) {
                 if (blurb._id == blurbId) {
                     blurb.likes += 1;
                 }

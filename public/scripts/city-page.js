@@ -41,7 +41,42 @@ $(document).ready(function() {
         $("#city-container").off("click", ".likeBlurbBtn");
     });
 
+    $("#city-container").on("click", ".newBlurbBtn", function() {
+        $('#blurbModal').modal();
+    });
+
+    $("#city-container").on("click", "#saveBlurb", function() {
+      console.log('save ws clicked');
+      var blurber = $("#blurberName").val();
+      var blurbText = $("#blurbText").val();
+
+        $('#blurbModal').modal('toggle');
+        console.log(cityId);
+
+        $.ajax({
+            method: "POST",
+            url: "/api/cities/" + cityId + "/blurbs/",
+            data: {poster: blurber, textContent: blurbText},
+            success: newBlurbSuccess,
+            error: newBlurbError
+        })
+        $("#city-container").off("click", ".likeBlurbBtn");
+    });
+
+
 });
+
+
+function newBlurbSuccess(json){
+  console.log("new blurb",json);
+  var newBlurb ="<div class='blurb-box'><h4 class='posterName'>"+json.poster+"</h4><p class='blurbText'>"+json.textContent+"</p><h5 class='likes'>"+json.likes+"</h5><button type='button' data='"+json._id +"class+'='deleteBlurbBtn' name='deleteBtn'>X</button><button type='button' data='"+json._id+ "class='likeBlurbBtn' name='likeBtn'>+1</button></div>";
+
+  $(".blurb-box").first().prepend(newBlurb);
+
+}
+function newBlurbError(){
+  console.log('new error');
+}
 
 function likeBlurbError(){
   console.log("like blurb error");

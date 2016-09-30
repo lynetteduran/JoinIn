@@ -7,9 +7,13 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <title></title>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+      <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script> -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.min.js"></script>
     <script src="/scripts/city-page.js"></script>
 </head>
 
@@ -20,6 +24,51 @@
                 <img src="{{city.logo}}" alt="City Logo">
                 <h1 class="city-name" data={{city._id}}>{{city.name}}</h1>
             </a>
+
+            <button type="button" class="newBlurbBtn" name="createBtn">New Blurb</button>
+
+            <div class="modal fade" tabindex="-1" role="dialog" id="blurbModal">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+
+                            <h4 class="modal-title">Share a Blurb!</h4>
+                        </div>
+                        <div class="modal-body">
+                            <fieldset class='form-horizontal'>
+
+                                <!-- Text input-->
+                                <div class="form-group">
+                                    <label class="col-md-4 control-label" for="blurberName">Name:</label>
+                                    <div class="col-md-4">
+                                        <input id="blurberName" name="blurberName" type="text" placeholder="" class="form-control input-md" required="">
+
+                                    </div>
+                                </div>
+
+                                <!-- Text input-->
+                                <div class="form-group">
+                                    <label class="col-md-4 control-label" for="blurbText">Blurb:</label>
+                                    <div class="col-md-4">
+                                        <input id="blurbText" name="blurbText" type="text" placeholder="" class="form-control input-md">
+
+                                    </div>
+                                </div>
+
+                            </fieldset>
+
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary" id="saveBlurb">Share</button>
+                        </div>
+                    </div>
+                    <!-- /.modal-content -->
+                </div>
+                <!-- /.modal-dialog -->
+            </div>
+            <!-- /.modal -->
+
             {{#each city.blurbs}}
             <div class="blurb-box">
                 <h4 class="posterName">{{poster}}</h4>
