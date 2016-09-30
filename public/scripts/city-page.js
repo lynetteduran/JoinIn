@@ -29,16 +29,13 @@ $(document).ready(function() {
     })
 
     $("#city-container").on("click", ".likeBlurbBtn", function() {
-      likes = $(this).siblings(".likes").html();
-      $(this).siblings(".likes").html(+likes+1);
-
         $.ajax({
             method: "PUT",
             url: "/api/cities/" + cityId + "/blurbs/" + $(this).attr('data'),
             success: likeBlurbSuccess,
             error: likeBlurbError
         })
-        $("#city-container").off("click", ".likeBlurbBtn");
+        // $("#city-container").off("click", ".likeBlurbBtn");
     });
 
     $("#city-container").on("click", ".newBlurbBtn", function() {
@@ -60,13 +57,14 @@ $(document).ready(function() {
             success: newBlurbSuccess,
             error: newBlurbError
         })
-        $("#city-container").off("click", ".likeBlurbBtn");
+
+        // $("#city-container").off("click", ".likeBlurbBtn");
     });
 });
 
 function newBlurbSuccess(json){
   console.log("new blurb",json);
-  var newBlurb ="<div class='blurb-box'><h4 class='posterName'>"+json.poster+"</h4><p class='blurbText'>"+json.textContent+"</p><h5 class='likes'>"+json.likes+"</h5><button type='button' data='"+json._id +"class+'='deleteBlurbBtn' name='deleteBtn'>X</button><button type='button' data='"+json._id+ "class='likeBlurbBtn' name='likeBtn'>+1</button></div>";
+  var newBlurb ="<div class='blurb-box'><h4 class='posterName'>"+json.poster+"</h4><p class='blurbText'>"+json.textContent+"</p><h5 class='likes'> Likes:"+json.likes+"</h5><button type='button' data='"+json._id +"class+'='deleteBlurbBtn' name='deleteBtn'>X</button><button type='button' data='"+json._id+ "class='likeBlurbBtn' name='likeBtn'>+1</button></div>";
 
   $(".blurb-box").first().prepend(newBlurb);
 
@@ -79,8 +77,9 @@ function likeBlurbError(){
   console.log("like blurb error");
 }
 
-function likeBlurbSuccess(id){
-  console.log(id);
+function likeBlurbSuccess(blurb){
+  $('*[data='+blurb._id+']').siblings(".likes").html("Likes: "+blurb.likes);
+
 }
 
 function deleteBlurbError(){

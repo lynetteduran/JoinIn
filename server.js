@@ -138,15 +138,17 @@ app.put('/api/cities/:id/blurbs/:blurbId', function updateBlurb(req, res) {
             _id: cityId
         },
         function(err, city) {
+          var myBlurb = {};
             city.blurbs.forEach(function(blurb) {
                 if (blurb._id == blurbId) {
                     blurb.likes += 1;
+                    myBlurb = blurb;
                 }
             });
             city.save();
+            res.json({_id: blurbId,likes: myBlurb.likes});
         });
 
-    res.send(blurbId);
 });
 
 
