@@ -62,10 +62,7 @@ $(document).ready(function() {
         })
         $("#city-container").off("click", ".likeBlurbBtn");
     });
-
-
 });
-
 
 function newBlurbSuccess(json){
   console.log("new blurb",json);
@@ -85,7 +82,6 @@ function likeBlurbError(){
 function likeBlurbSuccess(id){
   console.log(id);
 }
-
 
 function deleteBlurbError(){
   console.log('delete blurb error');
