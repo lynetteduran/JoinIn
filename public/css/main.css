@@ -1,31 +1,36 @@
-/*$color1: rgba(255, 255, 141, 1);
-$color2: rgba(46, 196, 182, 1);
-$color3: rgba(217, 242, 237, 1);
-$color4: rgba(247, 255, 247, 1);
-$color5: rgba(52, 52, 52, 1);
+/*$color1: rgba(255, 255, 141, 1); Pastel Yellow
+$color2: rgba(46, 196, 182, 1); Cornflowery Blue 
+$color3: rgba(217, 242, 237, 1); Light Blue White
+$color4: rgba(247, 255, 247, 1); White
+$color5: rgba(52, 52, 52, 1); Dark Brown/Black
 */
 
 
 *{
-font-align: center !important;
+text-align: center;
 margin: 0;
 padding: 0;
 }
 
 body{
-	background-color: #f7fff7;
+background-color: #d9f2ed;
 }
-p{
-	color: #ffff8d;
-}
+
 #city-container{
 
 }
+.city-name{
+	font-size: 60px;
+	color: #343434;
+}
 .back{
+  background-color: #ffff8d;
+  color: #2ec4b6;
 
 }
 .newBlurbBtn{
-
+  background-color: #ffff8d;
+  color: #2ec4b6;
 }
 .modal{
 
@@ -82,26 +87,32 @@ p{
 
 }
 .blurb-box{
-
+	background-color: #2ec4b6;
+	margin: 10%;
+	padding: 5px;
 }
 .blurbText{
-
+  color: #ffff8d;
 }
 .likes{
-
+  color: #ffff8d;
 }
 .posterName{
-	color: #2ec4b6;
+	color: #ffff8d;
 }
 .deleteBlurbBtn{
-	background-color: #d9f2ed;
+	background-color: #2ec4b6;
 	border-radius: 2px; 
-	border: 4px solid #ffff8d;
+	border: 2px solid #ffff8d;
+	font-size: 12px;
 	color: #ffff8d;
+	padding: 1px 3px;
 }
 .likeBlurbBtn{
-	background-color: #d9f2ed;
+	background-color: #2ec4b6;
 	border-radius: 2px; 
-	border: 4px solid #ffff8d;
+	border: 2px solid #ffff8d;
+	font-size: 12px;
 	color: #ffff8d;
+	padding: 1px 3px;
 }
