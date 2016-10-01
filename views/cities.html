@@ -5,83 +5,78 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title></title>
-
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
     <link rel="stylesheet" href="/css/main.css">
-
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tether/1.3.7/css/tether.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
     <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script> -->
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.min.js"></script>
     <script src="/scripts/city-page.js"></script>
+    <title>JoinIn - {{city.name}}</title>
 </head>
 
 <body>
     <div id="city-container">
-        <script id="city-template" type="text/x-handlebars-template">
-            <a href="#">
-                <img src="{{city.logo}}" alt="City Logo">
-                <h1 class="city-name" data={{city._id}}>{{city.name}}</h1>
-            </a>
-            <a href="/"><button type="button" class="back">Home Page</button></a>
-            <button type="button" class="newBlurbBtn" name="createBtn">New Blurb</button>
+    <script id="city-template" type="text/x-handlebars-template">
+        <a href="#">
+            <img src="{{city.logo}}" alt="City Logo">
+            <h1 class="city-name" data={{city._id}}>{{city.name}}</h1>
+        </a>
+        <a href="/"><button type="button" class="back">Home Page</button>
+        </a>
+        <button type="button" class="newBlurbBtn" name="createBtn">New Blurb</button>
 
-            <div class="modal fade" tabindex="-1" role="dialog" id="blurbModal">
-                <div class="modal-dialog">
-                    <div class="modal-content">
-                        <div class="modal-header">
-
-                            <h4 class="modal-title">Share a Blurb!</h4>
-                        </div>
-                        <div class="modal-body">
-                            <fieldset class='form-horizontal'>
-
-                                <!-- Text input-->
-                                <div class="form-group">
-                                    <label class="col-md-4 control-label" for="blurberName">Name:</label>
-                                    <div class="col-md-4">
-                                        <input id="blurberName" name="blurberName" type="text" placeholder="" class="form-control input-md" required="">
-
-                                    </div>
-                                </div>
-
-                                <!-- Text input-->
-                                <div class="form-group">
-                                    <label class="col-md-4 control-label" for="blurbText">Blurb:</label>
-                                    <div class="col-md-4">
-                                        <input id="blurbText" name="blurbText" type="text" placeholder="" class="form-control input-md">
-
-                                    </div>
-                                </div>
-
-                            </fieldset>
-
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                            <button type="button" class="btn btn-primary" id="saveBlurb">Share</button>
-                        </div>
+        <div class="modal fade" tabindex="-1" role="dialog" id="blurbModal">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title">Share a Blurb!</h4>
                     </div>
-                    <!-- /.modal-content -->
+                <div class="modal-body">
+                    <fieldset class='form-horizontal'>
+
+                    <!-- Text input-->
+                    <div class="form-group">
+                    <label class="col-md-4 control-label" for="blurberName">Name:</label>
+                    <div class="col-md-4">
+                        <input id="blurberName" name="blurberName" type="text" placeholder="" class="form-control input-md" required="">
+                    </div>
+                    </div>
+
+                    <!-- Text input-->
+                    <div class="form-group">
+                        <label class="col-md-4 control-label" for="blurbText">Blurb:</label>
+                            <div class="col-md-4">
+                                <input id="blurbText" name="blurbText" type="text" placeholder="" class="form-control input-md">
+
+                            </div>
+                    </div>
+                    </fieldset>
                 </div>
-                <!-- /.modal-dialog -->
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary" id="saveBlurb">Share</button>
+                    </div>
+                </div>
+                    <!-- /.modal-content -->
             </div>
+                <!-- /.modal-dialog -->
+        </div>
             <!-- /.modal -->
 
-            {{#each city.blurbs}}
-            <div class="blurb-box">
-                <h4 class="posterName">{{poster}}</h4>
-                <p class="blurbText">{{textContent}}</p>
-                <h5 class="likes">Likes: {{likes}}</h5>
-                <button type="button" data={{_id}} class="deleteBlurbBtn" name="deleteBtn">X</button>
-                <button type="button" data={{_id}} class="likeBlurbBtn" name="likeBtn">+1</button>
-            </div>
-            {{/each}}
-        </script>
+        {{#each city.blurbs}}
+        <div class="blurb-box">
+            <h4 class="posterName">{{poster}}</h4>
+            <p class="blurbText">{{textContent}}</p>
+            <h5 class="likes">Likes: {{likes}}</h5>
+            <button type="button" data={{_id}} class="deleteBlurbBtn" name="deleteBtn">X</button>
+            <button type="button" data={{_id}} class="likeBlurbBtn" name="likeBtn">+1</button>
+        </div>
+        {{/each}}
+    </script>
     </div>
-
-
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.3.7/js/tether.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/js/bootstrap.min.js" integrity="sha384-vZ2WRJMwsjRMW/8U7i6PWi6AlO1L79snBrmgiDpgIWJ82z8eA5lenwvxbMV1PAh7" crossorigin="anonymous"></script>
 </body>
 

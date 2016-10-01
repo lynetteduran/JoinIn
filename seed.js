@@ -8,7 +8,7 @@ var SanFrancisco = {
         lat: 1,
         lng: 1
     },
-    name: "San Francisco",
+    name: "SAN FRANCISCO",
     logo: "https://parkerhiggins.net/wp-content/uploads/2012/07/ggb.png", //url to image
 
     blurbs: [{
@@ -34,7 +34,7 @@ var NewYorkCity = {
         lat: 1,
         lng: 1
     },
-    name: "New York City",
+    name: "NEW YORK CITY",
     logo: "http://webpage.pace.edu/sd93883p/CIS%20Group%20Project/skyline.gif", //url to image
 
     blurbs: [{
@@ -60,8 +60,8 @@ var Seattle = {
         lat: 1,
         lng: 1
     },
-    name: "Seattle",
-    logo: "http://content.sportslogos.net/logos/6/241/full/a95fudj9ku5e9gftkhbuks8h2.gif", //url to image
+    name: "SEATTLE",
+    logo: "http://i.imgur.com/VPljh4J.png", //url to image
 
     blurbs: [{
         poster: "Toby",
