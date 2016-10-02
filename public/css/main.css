@@ -8,7 +8,7 @@ $color5: rgba(52, 52, 52, 1); Dark Brown/Black
 
 *{
 text-align: center;
-margin: 0;
+margin: auto;
 padding: 0;
 }
 
@@ -19,71 +19,27 @@ background-color: #d9f2ed;
 #city-container{
 
 }
-.city-name{
-	font-size: 60px;
-	color: #343434;
+.city-logo{
+  display: block;
+  width: 300;
+  max-width: 100%;
+  height: 200;
+  vertical-align: middle;
 }
-.back{
+.city-name{
+  font-size: 60px;
+  color: #343434;
+}
+#homeBtn{
   background-color: #ffff8d;
   color: #2ec4b6;
-
 }
 .newBlurbBtn{
   background-color: #ffff8d;
   color: #2ec4b6;
 }
-.modal{
 
-}
-.fade{
-
-}
 #blurbModal{
-
-}
-.modal-dialog{
-
-}
-.modal-content{
-
-}
-.modal-header{
-
-}
-.modal-title{
-
-}
-.modal-body{
-
-}
-.form-horizontal{
-
-}
-.form-group{
-
-}
-.col-md-4{
-
-}
-.control-label{
-
-}
-.form-control{
-
-}
-.input-md{
-
-}
-.modal-footer{
-
-}
-.btn{
-
-}
-.btn-default{
-
-}
-.btn-primary{
 
 }
 .blurb-box{
@@ -109,7 +65,7 @@ background-color: #d9f2ed;
 	padding: 1px 3px;
 }
 .likeBlurbBtn{
-	background-color: #2ec4b6;
+    background-color: #2ec4b6;
 	border-radius: 2px; 
 	border: 2px solid #ffff8d;
 	font-size: 12px;

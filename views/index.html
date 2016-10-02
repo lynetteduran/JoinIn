@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <link rel="stylesheet" href="/css/main.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tether/1.3.7/css/tether.min.css">
     <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script> -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
@@ -20,14 +20,14 @@
         <script id="city-template" type="text/x-handlebars-template">
             {{#each city}}
             <a href="/cities/{{_id}}">
-                <img src="{{logo}}" alt="City Logo">
+                <img src="{{logo}}" class="city-logo" alt="City Logo">
                 <h1 class = "city-name" data = {{_id}}>{{name}}</h1>
             </a>
 
             <div class="blurb-box">
                 <h4>{{blurbs.0.poster}}</h4>
                 <p>{{blurbs.0.textContent}}</p>
-                <h5>{{blurbs.0.likes}}</h5>
+                <h5>Likes: {{blurbs.0.likes}}</h5>
             </div>
             {{/each}}
         </script>
