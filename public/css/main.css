@@ -5,13 +5,6 @@ $color4: rgba(247, 255, 247, 1); White
 $color5: rgba(52, 52, 52, 1); Dark Brown/Black
 */
 
-
-*{
-text-align: center;
-margin: auto;
-padding: 0;
-}
-
 body{
 background-color: #d9f2ed;
 }
@@ -30,38 +23,42 @@ background-color: #d9f2ed;
   font-size: 60px;
   color: #343434;
 }
-#homeBtn{
-  background-color: #ffff8d;
-  color: #2ec4b6;
+#nav-btns{
+	float: left;
 }
-.newBlurbBtn{
-  background-color: #ffff8d;
-  color: #2ec4b6;
+#homeBtn{
+  background-color: #d9f2ed;
+  color: #343434;
+}
+#newBlurbBtn{
+  background-color: #d9f2ed;
+  color: #343434;
 }
 
 #blurbModal{
 
 }
 .blurb-box{
-	background-color: #2ec4b6;
+	background-color: #ffff8d;
 	margin: 10%;
 	padding: 5px;
+	box-shadow: 10px 10px 5px grey;
 }
 .blurbText{
-  color: #ffff8d;
+  color: #343434;
 }
 .likes{
-  color: #ffff8d;
+  color: #343434;
 }
 .posterName{
-	color: #ffff8d;
+	color: #343434;
 }
 .deleteBlurbBtn{
 	background-color: #2ec4b6;
 	border-radius: 2px; 
 	border: 2px solid #ffff8d;
 	font-size: 12px;
-	color: #ffff8d;
+	color: #343434;
 	padding: 1px 3px;
 }
 .likeBlurbBtn{
@@ -69,6 +66,6 @@ background-color: #d9f2ed;
 	border-radius: 2px; 
 	border: 2px solid #ffff8d;
 	font-size: 12px;
-	color: #ffff8d;
+	color: #343434;
 	padding: 1px 3px;
 }
