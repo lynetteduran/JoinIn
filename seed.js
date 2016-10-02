@@ -9,7 +9,7 @@ var SanFrancisco = {
         lng: 1
     },
     name: "San Francisco",
-    logo: "https://parkerhiggins.net/wp-content/uploads/2012/07/ggb.png", //url to image
+    logo: "http://i.imgur.com/FJObaIG.png?3", //url to image
 
     blurbs: [{
         poster: "Brandon",
@@ -35,7 +35,7 @@ var NewYorkCity = {
         lng: 1
     },
     name: "New York City",
-    logo: "http://webpage.pace.edu/sd93883p/CIS%20Group%20Project/skyline.gif", //url to image
+    logo: "http://i.imgur.com/vu0o0JF.png?2", //url to image
 
     blurbs: [{
         poster: "Claire",
@@ -61,7 +61,7 @@ var Seattle = {
         lng: 1
     },
     name: "Seattle",
-    logo: "http://content.sportslogos.net/logos/6/241/full/a95fudj9ku5e9gftkhbuks8h2.gif", //url to image
+    logo: "http://i.imgur.com/kkkAk2M.jpg?3", //url to image
 
     blurbs: [{
         poster: "Toby",
