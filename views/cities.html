@@ -75,8 +75,12 @@
 
         {{#each city.blurbs}}
         <div class="blurb-box">
-            <h5 class="posterName">{{poster}}</h5>
+         <div class="container">
+          <blockquote>
             <p class="blurbText">{{textContent}}</p>
+            <footer><p class="posterName">{{poster}}</p></footer>
+          </blockquote>
+         </div>
             <div class="btn-group">
             <button type="button" data={{_id}} id="deleteBlurbBtn" class="btn btn-primary" name="deleteBtn">X</button>
 
