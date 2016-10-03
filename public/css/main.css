@@ -4,15 +4,23 @@ $color3: rgba(217, 242, 237, 1); Light Blue White
 $color4: rgba(247, 255, 247, 1); White
 $color5: rgba(52, 52, 52, 1); Dark Brown/Black
 */
+*{
+	position: center;
 
+}
 body{
 
+}
+header{
+	background-color: rgba(52, 52, 52, 1);
 }
 
 #city-container{
 	background-color: rgba(52, 52, 52, 1);
+	padding: 50px;
 
 }
+
 .city-logo{
   display: block;
   width: 300;
@@ -20,9 +28,12 @@ body{
   height: 200;
   vertical-align: middle;
   background-color: white;
+  border: 1px solid #FE5D26;
+  margin: 0;
 }
 .city-name{
-  font-size: 60px;
+  font-family: 'Raleway', sans-serif;
+  font-size: 45px;
   color: #f7fff7;
 }
 #nav-btns{
@@ -38,6 +49,7 @@ body{
 }
 
 #blurbModal{
+   font-family: 'Open Sans', sans-serif;
 
 }
 .blurb-box{
@@ -45,29 +57,34 @@ body{
 	margin: 10%;
 	padding: 5px;
 	box-shadow: 10px 10px 5px grey;
+	border: 2px solid rgba(46, 196, 182, 1);
+    border-radius: 4px;
 }
 .blurbText{
   color: #343434;
+  font-family: 'Open Sans', sans-serif;
 }
 .likes{
   color: #343434;
+  font-family: 'Open Sans', sans-serif;
 }
 .posterName{
+	font-family: 'Raleway', sans-serif;
 	color: #343434;
 }
 .deleteBlurbBtn{
 	background-color: #2ec4b6;
 	border-radius: 2px; 
-	border: 2px solid #ffff8d;
 	font-size: 12px;
 	color: #343434;
 	padding: 1px 3px;
+    font-family: 'Open Sans', sans-serif;
 }
 .likeBlurbBtn{
     background-color: #2ec4b6;
 	border-radius: 2px; 
-	border: 2px solid #ffff8d;
 	font-size: 12px;
+	font-family: 'Open Sans', sans-serif;
 	color: #343434;
 	padding: 1px 3px;
 }
