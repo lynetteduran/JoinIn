@@ -37,13 +37,12 @@ $(document).ready(function() {
         })
         // $("#city-container").off("click", ".likeBlurbBtn");
     });
-
-    $("#city-container").on("click", ".newBlurbBtn", function() {
+    $("#city-container").on("click", "#newBlurbBtn", function() {
         $('#blurbModal').modal();
     });
 
     $("#city-container").on("click", "#saveBlurb", function() {
-      console.log('save ws clicked');
+      console.log('save was clicked');
       var blurber = $("#blurberName").val();
       var blurbText = $("#blurbText").val();
 
@@ -64,10 +63,8 @@ $(document).ready(function() {
 
 function newBlurbSuccess(json){
   console.log("new blurb",json);
-  var newBlurb ="<div class='blurb-box'><h4 class='posterName'>"+json.poster+"</h4><p class='blurbText'>"+json.textContent+"</p><h5 class='likes'> Likes:"+json.likes+"</h5><button type='button' data='"+json._id +"class+'='deleteBlurbBtn' name='deleteBtn'>X</button><button type='button' data='"+json._id+ "class='likeBlurbBtn' name='likeBtn'>+1</button></div>";
-
+  var newBlurb ="<div class='blurb-box'><h4 class='posterName'>"+json.poster+"</h4><p class='blurbText'>"+json.textContent+"</p><button type='button' data='"+json._id +"class='deleteBlurbBtn' name='deleteBtn'>X</button><button type='button' data='"+json._id +"class='likeBlurbBtn' name='likeBtn'><span class='like'>"+json.likes +"</span><img class='hearticon' src='/images/hearticon.png' alt='like' title='like'>s</button>"; 
   $(".blurb-box").first().prepend(newBlurb);
-
 }
 function newBlurbError(){
   console.log('new error');
@@ -78,9 +75,9 @@ function likeBlurbError(){
 }
 
 function likeBlurbSuccess(blurb){
-  $('*[data='+blurb._id+']').siblings(".likes").html("Likes: "+blurb.likes);
-
-}
+  // $('*[data='+blurb._id+']').siblings(".likes").html("Likes: "+blurb.likes);
+  $('*[data='+blurb._id+']').siblings(".likeBlurbBtn").html(blurb.likes+ ' <img class="hearticon" src="/images/hearticon.png" alt="like" title="like">'+'s');
+} 
 
 function deleteBlurbError(){
   console.log('delete blurb error');

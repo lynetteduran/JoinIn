@@ -144,6 +144,7 @@ app.put('/api/cities/:id/blurbs/:blurbId', function updateBlurb(req, res) {
                     blurb.likes += 1;
                     myBlurb = blurb;
                 }
+
             });
             city.save();
             res.json({_id: blurbId,likes: myBlurb.likes});
