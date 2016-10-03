@@ -19,7 +19,7 @@ $(document).ready(function() {
         error: handleError
     });
 
-    $("#city-container").on("click", ".deleteBlurbBtn", function() {
+    $("#city-container").on("click", "#deleteBlurbBtn", function() {
         $.ajax({
             method: "DELETE",
             url: "/api/cities/" + cityId + "/blurbs/" + $(this).attr('data'),
@@ -28,7 +28,7 @@ $(document).ready(function() {
         })
     })
 
-    $("#city-container").on("click", ".likeBlurbBtn", function() {
+    $("#city-container").on("click", "#likeBlurbBtn", function() {
         $.ajax({
             method: "PUT",
             url: "/api/cities/" + cityId + "/blurbs/" + $(this).attr('data'),
@@ -55,15 +55,14 @@ $(document).ready(function() {
             data: {poster: blurber, textContent: blurbText},
             success: newBlurbSuccess,
             error: newBlurbError
-        })
-
+        });
         // $("#city-container").off("click", ".likeBlurbBtn");
     });
 });
 
 function newBlurbSuccess(json){
   console.log("new blurb",json);
-  var newBlurb ="<div class='blurb-box'><h4 class='posterName'>"+json.poster+"</h4><p class='blurbText'>"+json.textContent+"</p><button type='button' data='"+json._id +"class='deleteBlurbBtn' name='deleteBtn'>X</button><button type='button' data='"+json._id +"class='likeBlurbBtn' name='likeBtn'><span class='like'>"+json.likes +"</span><img class='hearticon' src='/images/hearticon.png' alt='like' title='like'>s</button>"; 
+  var newBlurb ="<div class='blurb-box'><h4 class='posterName'>"+json.poster+"</h4><p class='blurbText'>"+json.textContent+"</p><button type='button' data='"+json._id +"id='deleteBlurbBtn' class='btn btn-primary' name='deleteBtn'>X</button><button type='button' data='"+json._id +"id='likeBlurbBtn' class='btn btn-primary' name='likeBtn'><span class='like'>"+json.likes +"</span><img class='hearticon' src='/images/hearticon.png' alt='like' title='like'>s</button>"; 
   $(".blurb-box").first().prepend(newBlurb);
 }
 function newBlurbError(){
@@ -76,7 +75,7 @@ function likeBlurbError(){
 
 function likeBlurbSuccess(blurb){
   // $('*[data='+blurb._id+']').siblings(".likes").html("Likes: "+blurb.likes);
-  $('*[data='+blurb._id+']').siblings(".likeBlurbBtn").html(blurb.likes+ ' <img class="hearticon" src="/images/hearticon.png" alt="like" title="like">'+'s');
+  $('*[data='+blurb._id+']').siblings("#likeBlurbBtn").html(blurb.likes+ ' <img class="hearticon" src="/images/hearticon.png" alt="like" title="like">'+'s');
 } 
 
 function deleteBlurbError(){

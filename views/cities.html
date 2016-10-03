@@ -18,15 +18,15 @@
 <body>
     <div id="city-container">
     <script id="city-template" type="text/x-handlebars-template">
-    <nav>
-        <a href="/"><button type="button" id="homeBtn">Home Page</button>
+    <div class="btn-group">
+        <a href="/"><button type="button" id="homeBtn" class="btn btn-primary">Home Page</button>
         </a>
-        <button type="button" id="newBlurbBtn" name="createBtn">New Blurb</button>
-    </nav>
+        <button type="button" id="newBlurbBtn" class="btn btn-primary" name="createBtn">New Blurb</button>
+    </div>
       <div id="city-header">
         <a href="#">
             <img src="{{city.logo}}" class="city-logo" alt="City Logo">
-            <h1 class="city-name" data={{city._id}}>{{city.name}}</h1>
+            <h2 class="city-name" data={{city._id}}>{{city.name}}</h2>
         </a>
       </div>
 
@@ -75,12 +75,13 @@
 
         {{#each city.blurbs}}
         <div class="blurb-box">
-            <h4 class="posterName">{{poster}}</h4>
+            <h5 class="posterName">{{poster}}</h5>
             <p class="blurbText">{{textContent}}</p>
-            <!-- <h5 class="likes">Likes: {{likes}}</h5> -->
-            <button type="button" data={{_id}} class="deleteBlurbBtn" name="deleteBtn">X</button>
+            <div class="btn-group">
+            <button type="button" data={{_id}} id="deleteBlurbBtn" class="btn btn-primary" name="deleteBtn">X</button>
 
-            <button type="button" data={{_id}} class="likeBlurbBtn" name="likeBtn"><span class="like">{{likes}} </span><img class="hearticon" src="/images/hearticon.png" alt="like" title="like">s</button>
+            <button type="button" data={{_id}} id="likeBlurbBtn" class="btn btn-primary" name="likeBtn"><span class="like">{{likes}} </span><img class="hearticon" src="/images/hearticon.png" alt="like" title="like">s</button>
+            </div>
         </div>
         {{/each}}
       <footer>

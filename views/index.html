@@ -21,13 +21,13 @@
             {{#each city}}
             <a href="/cities/{{_id}}">
                 <img src="{{logo}}" class="city-logo" alt="City Logo">
-                <h1 class = "city-name" data = {{_id}}>{{name}}</h1>
+                <h2 id="city-name-home" class = "city-name" data = {{_id}}>{{name}}</h2>
             </a>
 
             <div class="blurb-box">
-                <h4>{{blurbs.0.poster}}</h4>
+                <h5>{{blurbs.0.poster}}</h5>
                 <p>{{blurbs.0.textContent}}</p>
-                <h5>Likes: {{blurbs.0.likes}}</h5>
+                <h6>{{blurbs.0.likes}} <span><img class="hearticon" src="/images/hearticon.png" alt="like" title="like"></span>s</h6>
             </div>
             {{/each}}
         </script>
